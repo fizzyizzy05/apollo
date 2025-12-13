@@ -41,3 +41,6 @@ pacman -S --noconfirm spice-vdagent
 
 # Enable Network Manager
 systemctl enable NetworkManager.service
+
+# Disable systemd's firstboot
+systemctl mask systemd-firstboot.service
