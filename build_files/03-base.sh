@@ -11,6 +11,7 @@ pacman -S --noconfirm \
     htop \
     bash \
     networkmanager \
+    distrobox \
     sudo
 
 systemctl enable NetworkManager.service
