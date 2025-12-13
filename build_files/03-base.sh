@@ -10,4 +10,7 @@ pacman -S --noconfirm \
     vim \
     htop \
     bash \
+    networkmanager \
     sudo
+
+systemctl enable NetworkManager.service
