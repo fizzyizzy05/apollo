@@ -14,6 +14,12 @@ rsync -rvK /ctx/system_files/ /
 chmod +x /usr/bin/rechunker-group-fix
 systemctl enable rechunker-group-fix.service
 
+# Install drivers
+pacman -S --noconfirm \
+    mesa \
+    vulkan-radeon \
+    vulkan-intel
+
 # Install core operating system software
 pacman -S --noconfirm \
     networkmanager \
