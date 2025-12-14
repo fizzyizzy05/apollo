@@ -2,9 +2,6 @@
 
 set -ouex pipefail
 
-# Set the os-release info
-/ctx/build_files/00-os-release.sh
-
 # Enable locales
 /ctx/build_files/01-locales.sh
 
