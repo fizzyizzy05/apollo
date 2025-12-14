@@ -3,13 +3,13 @@
 set -ouex pipefail
 
 # Set the os-release info
-/ctx/00-os-release.sh
+/ctx/build_files/00-os-release.sh
 
 # Enable locales
-/ctx/01-locales.sh
+/ctx/build_files/01-locales.sh
 
 # Install the base system packages.
-/ctx/03-base.sh
+/ctx/build_files/03-base.sh
 
 # Install GNOME
-/ctx/05-gnome.sh
+/ctx/build_files/05-gnome.sh

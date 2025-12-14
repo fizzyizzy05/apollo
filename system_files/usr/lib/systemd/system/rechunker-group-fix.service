@@ -1,0 +1,13 @@
+[Unit]
+Description=Fix groups
+Wants=local-fs.target
+After=local-fs.target
+
+[Service]
+Type=oneshot
+ExecStart=rechunker-group-fix /etc/group
+ExecStart=rechunker-group-fix /etc/gshadow
+ExecStart=systemd-sysusers
+
+[Install]
+WantedBy=default.target multi-user.target

@@ -1,6 +1,7 @@
 # Give Apollo-specific build scripts their own folder, making modularity for us easier. These will be called in once the base OS is built.
 FROM scratch AS ctx
-COPY build_files /
+COPY build_files /build_files
+COPY system_files /system_files
 
 # Original build scripts from bootcrew. For now, let's leave this part in tact to make syncing this with the upstream repo eaiser.
 
@@ -37,6 +38,6 @@ RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \
-    /ctx/build.sh
+    /ctx/build_files/build.sh
 
 RUN bootc container lint

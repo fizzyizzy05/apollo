@@ -1,0 +1,2 @@
+#!/bin/sh
+sed --sandbox -i -e "$(sed -En -e '/wheel|root|sudo/d' -e 's@^g\s+(\S+)\s.*@/\1/d@p' /usr/lib/sysusers.d/*.conf)" "$1"
