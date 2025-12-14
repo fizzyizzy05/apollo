@@ -26,6 +26,3 @@ pacman -S --noconfirm \
     espeakup
 
 systemctl enable gdm
-
-# Force the creation of systemd sysusers
-systemd-sysusers
