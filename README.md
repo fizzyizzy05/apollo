@@ -1,7 +1,6 @@
-# Apollo.
-
+# Apollo
 > [!WARNING]  
-> Apollo is experimental. Use with caution, and stability is not guaranteed at this time. Basic things *will* be missing. At this time you should only install it if you're willing to help develop and test it.
+> Apollo is experimental. Use with caution; stability is not guaranteed at this time and basic things *will* be missing. Be prepared to report and help fix bugs.
 
 Apollo is a bootc image built on top of Arch Linux and GNOME. It is designed for gaming, software development and general day to day use for people who want a reliable, up to date and easy to use desktop operating system. It is based on the arch-bootc image from bootcrew, with a myriad of included packages and changes for desktop usability.
 
