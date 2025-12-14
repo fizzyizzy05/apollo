@@ -37,7 +37,6 @@ pacman -S --noconfirm \
     distrobox \
     podman \
     docker \
-    flatpak
 
 # Install pre-included terminal applications
 pacman -S --noconfirm \

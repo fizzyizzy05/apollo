@@ -8,5 +8,8 @@ set -ouex pipefail
 # Install the base system packages.
 /ctx/build_files/03-base.sh
 
+# Install AUR packages
+/ctx/build_files/04-aur-packages.sh
+
 # Install GNOME
 /ctx/build_files/05-gnome.sh
