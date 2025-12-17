@@ -55,14 +55,3 @@ pacman -S --noconfirm \
 # Install spice-vdagent
 pacman -S --noconfirm spice-vdagent
 
-# Enable Network Manager & systemd-resolved
-systemctl enable NetworkManager.service
-systemctl enable systemd-resolved.service
-
-# Disable systemd's firstboot
-systemctl mask systemd-firstboot.service
-
-# Make sure that brew can be used with bash
-echo "source /etc/profile.d/brew.sh" | tee -a /etc/bash.bashrc
-
-echo "help"

@@ -13,3 +13,6 @@ set -ouex pipefail
 
 # Install GNOME
 /ctx/build_files/05-gnome.sh
+
+# Override everything
+/ctx/build_files/99-overrides.sh
