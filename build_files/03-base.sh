@@ -27,11 +27,6 @@ pacman -S --noconfirm \
     power-profiles-daemon \
     gamemode
 
-# Enable wheel group for sudo
-echo "%wheel ALL=(ALL) ALL" > /etc/sudoers.d/wheel-group
-chmod 0400 /etc/sudoers.d/wheel-group
-visudo -c -f /etc/sudoers.d/wheel-group
-
 # Install flatpak and distrobox
 pacman -S --noconfirm \
     distrobox \
