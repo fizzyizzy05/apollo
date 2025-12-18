@@ -2,9 +2,10 @@ image_name := env("BUILD_IMAGE_NAME", "apollo")
 image_tag := env("BUILD_IMAGE_TAG", "latest")
 base_dir := env("BUILD_BASE_DIR", ".")
 filesystem := env("BUILD_FILESYSTEM", "ext4")
+build_args := env("BUILD_ARGUMENTS", "")
 
-build-containerfile $image_name=image_name:
-    sudo podman build -t "${image_name}:latest" .
+build-containerfile $image_name=image_name $build_args=build_args:
+    sudo podman build ${build_args} -t "${image_name}:latest" .
 
 bootc *ARGS:
     sudo podman run \
