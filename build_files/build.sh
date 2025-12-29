@@ -2,7 +2,7 @@
 
 set -ouex pipefail
 
-echo "=== Starting Build... ==="
+echo "=== Starting Build for $IMAGE_NAME... ==="
 
 # Enable locales
 /ctx/build_files/base/01-locales.sh

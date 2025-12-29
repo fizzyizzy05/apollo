@@ -11,7 +11,7 @@ default:
     
 # Build the OS image from the containerfile
 build-containerfile $image_name=image_name $build_args=build_args:
-    sudo podman build ${build_args} -t "${image_name}:latest" .
+    sudo podman build --build-arg IMAGE_NAME="${image_name}" ${build_args} -t "${image_name}:latest" .
 
 bootc *ARGS:
     sudo podman run \

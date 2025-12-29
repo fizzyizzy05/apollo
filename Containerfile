@@ -1,3 +1,5 @@
+# Add an argument for building a different image
+
 # Give Apollo-specific build scripts their own folder, making modularity for us easier. These will be called in once the base OS is built.
 FROM scratch AS ctx
 COPY build_files /build_files
@@ -33,12 +35,14 @@ RUN sed -i 's|^HOME=.*|HOME=/var/home|' "/etc/default/useradd" && \
     printf "d /var/roothome 0700 root root -\nd /run/media 0755 root root -" | tee -a "/usr/lib/tmpfiles.d/bootc-base-dirs.conf" && \
     printf '[composefs]\nenabled = yes\n[sysroot]\nreadonly = true\n' | tee "/usr/lib/ostree/prepare-root.conf"
 
+ARG IMAGE_NAME="${IMAGE_NAME:-apollo}"
+
 # Call in Apollo's build scripts.
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
     --mount=type=cache,dst=/var/cache \
     --mount=type=cache,dst=/var/log \
     --mount=type=tmpfs,dst=/tmp \
-    /ctx/build_files/build.sh
+	/ctx/build_files/build.sh
 
 # Copy Homebrew files from the brew image (credit to Universal Blue)
 COPY --from=ghcr.io/ublue-os/brew:latest /system_files /
